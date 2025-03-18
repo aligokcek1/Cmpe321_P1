@@ -108,6 +108,7 @@ CREATE TABLE ChessMatch(
 	-- Unique constraint for hall, table, date, and time slot
 	CONSTRAINT unique_match_slot UNIQUE (hall_ID, table_ID, date, time_slot)
 );
+
 -- `includes` relation. Tournament includes at least ChessMatch
 CREATE TABLE TournamentIncludesMatch(
 tournament_ID INT,
