@@ -55,7 +55,7 @@ username VARCHAR(50),
 experience_level ENUM('beginner', 'intermediate', 'advanced') NOT NULL,
 
 PRIMARY KEY (username),
-FOREIGN KEY (username) REFERENCES User(username)
+FOREIGN KEY (username) REFERENCES User(username) ON DELETE CASCADE
 );
 
 -- Table for Title Entities
