@@ -129,28 +129,9 @@ FOREIGN KEY (username) REFERENCES Coach(username) ON DELETE CASCADE,
 FOREIGN KEY (speciality_type) REFERENCES Speciality(speciality_type) ON DELETE CASCADE
 );
 
-CREATE TABLE sponsors(
-sponsor_ID INTEGER,
-team_ID INTEGER,
-
-PRIMARY KEY (sponsor_ID, team_ID),
-FOREIGN KEY (sponsor_ID) REFERENCES Sponsor(sponsor_ID) ON DELETE CASCADE,
-FOREIGN KEY (team_ID) REFERENCES Team(team_ID) ON DELETE CASCADE
-);
-
-CREATE TABLE manages(
-username VARCHAR(50),
-team_ID INTEGER,
-
-PRIMARY KEY (team_ID, username),
-FOREIGN KEY (team_ID) REFERENCES Team(team_ID) ON DELETE CASCADE,
-FOREIGN KEY (username) REFERENCES Coach(username) ON DELETE CASCADE,
-UNIQUE (username)
-);
-
 CREATE TABLE belongs_to(
 username VARCHAR(50) NOT NULL,
-team_ID INTEGER,
+team_ID INTEGER NOT NULL,
 
 FOREIGN KEY (username) REFERENCES Player(username) ON DELETE CASCADE,
 FOREIGN KEY (team_ID) REFERENCES Team(team_ID) ON DELETE CASCADE
